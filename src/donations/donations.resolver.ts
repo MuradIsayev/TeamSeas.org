@@ -21,14 +21,4 @@ export class DonationsResolver {
   findOne(@Args('id') id: number) {
     return this.donationsService.findOne(id);
   }
-
-  @Mutation('updateDonation')
-  update(@Args('updateDonationInput') updateDonationInput: UpdateDonationInput) {
-    return this.donationsService.update(updateDonationInput.id, updateDonationInput);
-  }
-
-  @Mutation('removeDonation')
-  remove(@Args('id') id: number) {
-    return this.donationsService.remove(id);
-  }
 }
