@@ -2,18 +2,17 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { GraphQLModule } from '@nestjs/graphql';
-import { ApolloServerPluginLandingPageGraphQLPlayground } from 'apollo-server-core';
+import { ApolloServerPluginLandingPageLocalDefault } from '@apollo/server/plugin/landingPage/default';
 import { DonationsModule } from './donations/donations.module';
+import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 
 @Module({
   imports: [
-    GraphQLModule.forRoot({
-      autoSchemaFile: 'schema.gql',
+    GraphQLModule.forRoot<ApolloDriverConfig>({
+      driver: ApolloDriver,
       playground: false,
-      plugins: [
-         ApolloServerPluginLandingPageGraphQLPlayground(),
-      ],
-      debug: true,
+      plugins: [ApolloServerPluginLandingPageLocalDefault()],
+      typePaths: ['./src/**/*.graphql'],
     }),
     DonationsModule,
   ],
