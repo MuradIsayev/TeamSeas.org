@@ -9,3 +9,14 @@ datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
+
+model Donation {
+  id          Int      @id @default(autoincrement())
+  count       Int
+  createdAt   DateTime @default(now())
+  displayName String
+  email       String
+  mobile      String?
+  message     String?
+  team        String?
+}
