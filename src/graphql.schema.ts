@@ -13,7 +13,8 @@ export class CreateDonationInput {
 }
 
 export class Donation {
-    exampleField?: Nullable<number>;
+    id: number;
+    count: number;
 }
 
 export abstract class IQuery {
