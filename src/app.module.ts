@@ -16,8 +16,8 @@ import { GraphQLDateTime } from 'graphql-iso-date';
       typePaths: ['./src/**/*.graphql'],
       resolvers: { DateTime: GraphQLDateTime },
       subscriptions: {
-        'subscriptions-transport-ws': true,
         'graphql-ws': true,
+        'subscriptions-transport-ws': true, // If Apollo Sandbox is used
       },
     }),
     DonationsModule,
