@@ -15,6 +15,10 @@ import { GraphQLDateTime } from 'graphql-iso-date';
       plugins: [ApolloServerPluginLandingPageLocalDefault()],
       typePaths: ['./src/**/*.graphql'],
       resolvers: { DateTime: GraphQLDateTime },
+      subscriptions: {
+        'subscriptions-transport-ws': true,
+        'graphql-ws': true,
+      },
     }),
     DonationsModule,
   ],
