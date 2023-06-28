@@ -4,10 +4,6 @@
 
 .env
 
-src/@generated/prisma-nestjs-graphql
-src/generated   
-src/prisma-nestjs-graphql
-
 # Logs
 logs
 *.log
